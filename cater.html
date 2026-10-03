@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catering - Wedding Planner</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fdf9f5;
+      color: #8b104e;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+main {
+    flex: 1; /* takes all available space */
+}
+  header {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  padding: 0 1%;
+  background-color: #000000;
+  display: flex;
+  align-items: center; /* Centers vertically */
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+}
+.logo {
+  display: flex;
+  align-items: center; /* Align logo image and text */
+  gap: 15px;
+}
+.logo-img {
+  height: 70px; /* Keep consistent size */
+  width: auto;
+}
+header h3 {
+  font-size: 30px;
+  font-family: "Monsieur La Doulaise", cursive;
+  font-style: italic;
+  color: rgb(194, 123, 133);
+  margin: 0; /* Remove extra space */
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 3px;
+  margin: 0.5rem;
+  margin-top: 1.7rem;
+  padding: 2rem;
+}
+nav a {
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* space between icon and text */
+  margin-right: 1rem;
+}
+nav ul li a i{
+    color: rgb(194, 123, 133);
+    font-size: 23px;
+}
+  
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-wrapper {
+  flex: 1;
+}
+
+footer {
+  margin-top: 7rem; /* pushes footer to bottom */
+  background-color: #000;
+  color: white;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  padding: 10px 0;
+}
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-logo {
+      width: 60px;
+      height: auto;
+      margin-bottom: 5px;
+    }
+    .footer-names {
+      font-size: 16px;
+      font-weight: bold;
+      color: #c27b85;
+    }
+    .footer-locations {
+      font-size: 13px;
+      color: #ddd;
+    }
+    .footer-copy {
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 5px;
+    }
+
+
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 50vh;
+      background: url('images/cat.png') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.2);
+    }
+    .hero h1 {
+      color: #ffffff;
+      position: relative;
+      font-size: 3rem;
+      animation: fadeInDown 1.5s ease;
+    }
+    .hero p {
+      position: relative;
+      font-size: 1.2rem;
+      margin-top: 10px;
+      animation: fadeInUp 2s ease;
+    }
+
+    /* Categories */
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 60px 10%;
+    }
+    .category {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transform: translateY(30px);
+      opacity: 0;
+      animation: fadeUp 1s forwards;
+    }
+    .category img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .category:hover img {
+      transform: scale(1.1);
+    }
+    .category h3 {
+      margin: 15px;
+      font-size: 1.5rem;
+    }
+    .category p {
+      margin: 0 15px 20px;
+      font-size: 1rem;
+      color: #424242;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeUp {
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: 50px;
+      background: #fff5ec;
+    }
+    .cta button {
+      padding: 15px 40px;
+      border: none;
+      background: #e6a756;
+      color: white;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .cta button:hover {
+      background: #d8933d;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+
+<div class="page-wrapper">
+    <header>
+      <div class="logo">
+        <img src="images/lai.png" alt="Logo" class="logo-img">
+        <h3><i class="fas fa-heart"></i> Petals & Promises</h3>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="demo.html"><i class="fas fa-home"></i>Home</a></li>
+          <li><a href="about.html"><i class="fas fa-heart"></i>About Us</a></li>
+          <li><a href="services.html"><i class="fas fa-concierge-bell"></i>Services</a></li>
+          <li><a href="about.html#blogs"><i class="fas fa-book"></i>Blog</a></li>
+          <li><a href="new/index.php"><i class="fas fa-feather" style="color: #d63384;"></i>Booking</a></li>
+        </ul>
+      </nav>
+    </header>
+
+
+
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <h1>Exquisite Catering Services</h1>
+      <p>Delight your guests with our curated menus and elegant presentation</p>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories">
+    <div class="category" style="animation-delay: 0.2s;">
+      <img src="images/starters.jpg" alt="Starters">
+      <h3>Starters</h3>
+      <p>Elegant appetizers to start your feast in style.</p>
+    </div>
+    <div class="category" style="animation-delay: 0.4s;">
+      <img src="images/main.jpg" alt="Main Course">
+      <h3>Main Course</h3>
+      <p>Rich, flavorful dishes crafted to perfection.</p>
+    </div>
+    <div class="category" style="animation-delay: 0.6s;">
+      <img src="images/deserts.jpg" alt="Desserts">
+      <h3>Desserts</h3>
+      <p>Sweet delights to end your celebration beautifully.</p>
+    </div>
+    <div class="category" style="animation-delay: 0.8s;">
+      <img src="images/beverages.jpg" alt="Beverages">
+      <h3>Beverages</h3>
+      <p>Refreshing drinks tailored for every taste.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Make Your Event Memorable</h2>
+    <a href="services.html">
+    <button>Back</button>
+    </a>
+  </section>
+
+
+<footer>
+    <div class="footer-content">
+      <img src="images/lai.png" alt="LP Logo" class="footer-logo">
+      <div class="footer-names"><i class="fas fa-heart"></i> A Touch of Timeless Charm by Laiba & Punita <i class="fas fa-heart"></i></div>
+      <div class="footer-locations">Pune | Mumbai | Nashik | Ahmednagar</div>
+      <div class="footer-copy">&copy; 2025 LP Petals & Promises. All rights reserved.</div>
+    </div>
+  </footer> 
+
+</body>
+</html>

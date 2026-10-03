@@ -1,0 +1,205 @@
+body {
+  background: linear-gradient(#e7e2e2);
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.row.no-gutters {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.col-md-8, .col-md-4 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.custom-carousel { 
+  margin: -1rem;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+} 
+.custom-carousel img { 
+  width: 100%;
+  height: 533px;
+  object-fit: cover; 
+} 
+.message-container { 
+  margin: -1rem;
+  background-color: #e6cfd7; 
+  padding: 2rem;
+  position: relative; 
+  overflow: hidden; 
+  height: 500px; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  border-radius: 0; 
+} 
+.message-container h2 { 
+  text-align: center;
+  color: #5e585b; 
+  font-weight: bold; 
+  font-family: "Parisienne", cursive;
+  font-size: 37px;
+}
+
+.heart {
+  position: absolute;
+  color: rgb(241, 5, 5);
+  font-size: 20px;
+  animation: floatUp 2s linear infinite;
+  opacity: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(500%) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-400%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.flower-img {
+  width: 50px;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+}
+
+.video-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  padding: 10px;
+  width: 100%;
+  max-width: 100%;
+}
+.wedding-video {
+  max-width: 50%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px auto;
+}
+
+.event-heading {
+  text-align: center;
+  padding: -10rem 10rem 10rem;
+}
+.event-heading h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 30px;
+  color: #b35c79;
+  margin-bottom: 2px;
+}
+.event-heading p {
+  font-family: 'Georgia', serif;
+  font-size: 14px;
+  color: #9c9595;
+}
+
+.event-carousel {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px 10px;
+}
+.event-box {
+  height: 350px;
+  width: 250px;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+.event-box:hover {
+  transform: scale(1.2);
+}
+.event-box img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.event-content {
+  padding: 5px;
+  background-color: rgba(241, 178, 178, 0.6);
+}
+.event-content h3 {
+  color: #af364e;
+  margin-bottom: 10px;
+  font-family: "Eagle Lake", serif;
+  font-weight: bolder;
+  font-size: 22px;
+}
+.event-content p {
+  color: #333;
+  font-size: 14px;
+  font-family: 'Georgia', serif;
+}
+
+@media (max-width: 1200px) {
+  .event-box {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .event-box {
+    width: 100%;
+  }
+}
+.font h3{
+  font-size: 35px;
+  font-family: "Monsieur La Doulaise", cursive;
+  font-style: italic;
+  color: rgb(194, 123, 133);
+  margin: 0;
+}
+
+footer {
+  background-color: #000;
+  color: white;
+  padding: 5px 5px 5px;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  margin-bottom: -2rem;
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo {
+  width: auto;
+  height: 70px;
+  margin-bottom: 10px;
+}
+.footer-names {
+  font-size: 18px;
+  font-weight: bold;
+  color: #c27b85;
+}
+.footer-locations {
+  font-size: 14px;
+  color: #ddd;
+}
+.footer-copy {
+  font-size: 13px;
+  color: #aaa;
+  margin-top: 10px;
+}
+
+

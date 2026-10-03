@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decorations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <style>
+  body {
+  background-image: url('images/bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;  /* keeps it locked while scrolling */
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+  
+main {
+    flex: 1; /* takes all available space */
+}
+  header {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  padding: 0 1%;
+  background-color: #000000;
+  display: flex;
+  align-items: center; /* Centers vertically */
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+}
+.logo {
+  display: flex;
+  align-items: center; /* Align logo image and text */
+  gap: 15px;
+}
+.logo-img {
+  height: 70px; /* Keep consistent size */
+  width: auto;
+}
+header h3 {
+  font-size: 30px;
+  font-family: "Monsieur La Doulaise", cursive;
+  font-style: italic;
+  color: rgb(194, 123, 133);
+  margin: 0; /* Remove extra space */
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 3px;
+  margin: 0.5rem;
+  margin-top: 1.7rem;
+  padding: 2rem;
+}
+nav a {
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* space between icon and text */
+  margin-right: 1rem;
+}
+nav ul li a i{
+    color: rgb(194, 123, 133);
+    font-size: 23px;
+}
+  
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-wrapper {
+  flex: 1;
+}
+
+footer {
+  margin-top: 7rem; /* pushes footer to bottom */
+  background-color: #000;
+  color: white;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  padding: 10px 0;
+}
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-logo {
+      width: 60px;
+      height: auto;
+      margin-bottom: 5px;
+    }
+    .footer-names {
+      font-size: 16px;
+      font-weight: bold;
+      color: #c27b85;
+    }
+    .footer-locations {
+      font-size: 13px;
+      color: #ddd;
+    }
+    .footer-copy {
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 5px;
+    }
+
+        h1 {
+            text-align: center;
+            margin-top: 6rem;
+            font-weight: bold;
+            color: #d63384;
+        }
+
+        .decoration-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .category {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 500px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .category h2 {
+            text-align: center;
+            color: #444;
+        }
+
+        .category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .category ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+
+
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* exactly 5 per row */
+  gap: 15px;
+  padding: 0 40px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+.gallery-grid video {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* CTA */
+    .cta {
+      text-align: center;
+      padding: 50px;
+      color: #094872;
+    }
+    .cta button {
+      padding: 15px 40px;
+      border: none;
+      background: #e6a756;
+      color: white;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .cta button:hover {
+      background: #d8933d;
+      transform: scale(1.05);
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+    <header>
+      <div class="logo">
+        <img src="images/lai.png" alt="Logo" class="logo-img">
+        <h3><i class="fas fa-heart"></i> Petals & Promises</h3>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="demo.html"><i class="fas fa-home"></i>Home</a></li>
+          <li><a href="about.html"><i class="fas fa-heart"></i>About Us</a></li>
+          <li><a href="services.html"><i class="fas fa-concierge-bell"></i>Services</a></li>
+          <li><a href="about.html#blogs"><i class="fas fa-book"></i>Blog</a></li>
+          <li><a href="new/index.php"><i class="fas fa-feather" style="color: #d63384;"></i>Booking</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <h1>🌸 Wedding Decorations 🌸</h1>
+    <div class="decoration-container">
+        <div class="category">
+            <h2>Basic</h2>
+            <ul>
+                <li>Flower Garlands(Zinnia & Marigold)</li>
+                <li>Stage Drapes (Based on the Hall)</li>
+                <li>Chandeliers (Silver)</li>
+                <li>Lighting (Standard)</li>
+            </ul>
+        </div>
+
+        <div class="category">
+            <h2> Premium</h2>
+            <ul>
+                <li>Premium Flower Arrangements(Roses, Zinnia & Gerbera)</li>
+                <li>Designer Stage Setup (Up to theme)</li>
+                <li>LED Lights & Chandeliers(Diamond & Golden)</li>
+                <li>Theme-based Decor</li>
+            </ul>
+        </div>
+
+        <div class="category">
+            <h2> Luxury</h2>
+            <ul>
+                <li>Exotic Flower Decoration (Theme Based)</li>
+                <li>Grand Stage with Backdrops</li>
+                <li>Crystal Chandeliers (Many Options)</li>
+                <li>Custom Theme Experience (Royal Experience)</li>
+            </ul>
+        </div>
+    </div>
+
+
+<!-- 🌸 Gallery Section -->
+<section class="gallery">
+  <h2 class="text-center mt-5 mb-4" style="color:#d63384; font-weight:bold;">
+    ✨ Our Decoration Gallery ✨
+  </h2>
+
+  <div class="gallery-grid">
+
+     <div class="card shadow-lg border-0">
+    <div class="card-body text-center">
+    <img src="images/dec1.jpg" alt="Decoration 1">
+      <h5 class="card-title" style="color:#c27b85;">Royal Stage Setup</h5>
+      <p class="card-text">A luxurious floral backdrop with chandeliers and elegant drapes.</p>
+    </div>
+    </div>
+
+    <div class="card shadow-lg border-0">
+    <div class="card-body text-center">
+    <img src="images/dec10.jpg" alt="Decoration 2">
+      <h5 class="card-title" style="color:#c27b85;">Table Arrangements</h5>
+      <p class="card-text">Comfortable table and chairs arrangement with chandeliers and drapes.</p>
+    </div>
+    </div>
+
+    <div class="card shadow-lg border-0">
+    <div class="card-body text-center">
+    <img src="images/dec8.jpg" alt="Decoration 3">
+      <h5 class="card-title" style="color:#c27b85;">Flower Arrangements</h5>
+      <p class="card-text">A Premium Flower setup using gerbera and roses based on theme.</p>
+    </div>
+    </div>
+
+    <div class="card shadow-lg border-0">
+    <div class="card-body text-center">
+    <img src="images/dec4.jpg" alt="Decoration 4">
+      <h5 class="card-title" style="color:#c27b85;">Luxurious Stage Setup</h5>
+      <p class="card-text">A royal flora with luxurious chandeliers and elegant drapes with great ambiance.</p>
+    </div>
+    </div>
+
+    <div class="card shadow-lg border-0">
+    <div class="card-body text-center">
+    <img src="images/dec5.jpg" alt="Decoration 5">
+      <h5 class="card-title" style="color:#c27b85;">Romantic Outdoor Setup</h5>
+      <p class="card-text">Fairy lights and floral arches under the night sky</p>
+    </div>
+    </div>
+
+    <div class="card shadow-lg border-0">
+    <div class="card-body text-center">
+    <img src="images/dec6.jpg" alt="Decoration 6">
+      <h5 class="card-title" style="color:#c27b85;">Pink & Yellow(Blush & Sunshine)</h5>
+      <p class="card-text">A cheerful yet graceful setup blending soft pink and vibrant yellow tones.</p>
+    </div>
+    </div>
+
+    <div class="card shadow-lg border-0">
+    <div class="card-body text-center">
+    <img src="images/dec11.jpg" alt="Decoration 6">
+      <h5 class="card-title" style="color:#c27b85;">Seating Arrangement</h5>
+      <p class="card-text">Circular Hall Arrangement Only available in Premium & Luxurious Decoration</p>
+    </div>
+    </div>
+
+    <div class="card shadow-lg border-0">
+    <div class="card-body text-center">
+    <img src="images/dec9.jpg" alt="Decoration 6">
+      <h5 class="card-title" style="color:#c27b85;">Entry from outdoor</h5>
+      <p class="card-text">A graceful Entry from the outdoor; perfect for photoshooting</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+ <br style="border:1px solid #ccc; margin: 50px auto; width:80%;">
+
+<div class="gallery-grid">
+
+
+  <!-- Image Cards here ... -->
+
+  <!-- Video Card 1 -->
+  <div class="card shadow-lg border-0">
+    <div class="card-body text-center">
+      <video controls style="width:100%; height:20rem; border-radius:8px;">
+        <source src="images/5vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <h5 class="card-title" style="color:#c27b85;">Wedding Ceremony Highlights</h5>
+      <p class="card-text">A glimpse of a beautifully decorated wedding ceremony with vibrant florals.</p>
+    </div>
+  </div>
+
+  <!-- Video Card 2 -->
+  <div class="card shadow-lg border-0">
+    <div class="card-body text-center">
+      <video controls style="width:100%; height:20rem; border-radius:8px;">
+        <source src="images/1vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <h5 class="card-title" style="color:#c27b85;">Reception Decor</h5>
+      <p class="card-text">A beautifully themed reception with luxurious chandeliers and lighting.</p>
+    </div>
+  </div>
+
+  <!-- Video Card 3 -->
+  <div class="card shadow-lg border-0">
+    <div class="card-body text-center">
+      <video controls style="width:100%; height:20rem; border-radius:8px;">
+        <source src="images/4vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <h5 class="card-title" style="color:#c27b85;">Outdoor Setup</h5>
+      <p class="card-text">A romantic outdoor decoration setup with fairy lights and floral arches.</p>
+    </div>
+  </div>
+
+
+  <!-- Video Card 4 -->
+  <div class="card shadow-lg border-0">
+    <div class="card-body text-center">
+      <video controls style="width:100%; height:20rem; border-radius:8px;">
+        <source src="images/3vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <h5 class="card-title" style="color:#c27b85;">Celestial Luxe for Wedding</h5>
+      <p class="card-text">A luxurious chandeliers and lighting with celestial decor at the hall.</p>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- CTA -->
+  <section class="cta">
+    <h2>Style Your Future With Us!</h2>
+    <a href="services.html">
+    <button>Back</button>
+    </a>
+  </section>
+
+
+
+<footer>
+    <div class="footer-content">
+      <img src="images/lai.png" alt="LP Logo" class="footer-logo">
+      <div class="footer-names"><i class="fas fa-heart"></i> A Touch of Timeless Charm by Laiba & Punita <i class="fas fa-heart"></i></div>
+      <div class="footer-locations">Pune | Mumbai | Nashik | Ahmednagar</div>
+      <div class="footer-copy">&copy; 2025 LP Petals & Promises. All rights reserved.</div>
+    </div>
+  </footer> 
+</body>
+</html>

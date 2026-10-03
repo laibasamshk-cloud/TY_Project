@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="demo.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Meddon&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black; height: 6rem;">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="images/lai.png" width="55" height="60" class="d-inline-block align-top mr-2" alt="">
+      <div class="font">
+        <h3><i class="fas fa-heart"></i>Petals & Promises</h3>
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto" style="font-size: 19px;">
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><i class="fas fa-home" style="color: rgb(194, 123, 133);"></i>Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html"><i class="fas fa-heart" style="color: rgb(194, 123, 133);"></i>About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="services.html"><i class="fas fa-concierge-bell" style="color: rgb(194, 123, 133);"></i>Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html"><i class="fas fa-book" style="color: rgb(194, 123, 133);"></i>Blogs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="new/index.php" data-toggle="modal" data-target="#authModal"><i class="fas fa-feather" style="color: rgb(228, 90, 136);"></i>Booking</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<!-- Authentication Modal -->
+<div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="authModalLabel">Login or Sign Up</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="auth-container">
+          <!-- Tabs -->
+          <div class="auth-tabs">
+            <button class="tab-button active" onclick="showForm('login')">Login</button>
+            <button class="tab-button" onclick="showForm('signup')">Sign Up</button>
+            <button class="tab-button" onclick="showForm('verify')" style="display:none;" id="verify-tab">Verify OTP</button>
+          </div>
+
+          <!-- Login Form -->
+          <div id="login-form" class="auth-form active">
+            <form id="loginForm">
+              <div class="form-group">
+                <label for="login-email">Email:</label>
+                <input type="email" class="form-control" id="login-email" required>
+              </div>
+              <div class="form-group">
+                <label for="login-password">Password:</label>
+                <input type="password" class="form-control" id="login-password" required>
+              </div>
+              <button type="submit" class="btn btn-submit">Login</button>
+              <p class="error-message" id="login-error"></p>
+              <p class="success-message" id="login-success"></p>
+            </form>
+          </div>
+
+          <!-- Signup Form -->
+          <div id="signup-form" class="auth-form">
+            <form id="signupForm">
+              <div class="form-group">
+                <label for="signup-name">Name:</label>
+                <input type="text" class="form-control" id="signup-name" required>
+              </div>
+              <div class="form-group">
+                <label for="signup-email">Email:</label>
+                <input type="email" class="form-control" id="signup-email" required>
+              </div>
+              <div class="form-group">
+                <label for="signup-password">Password:</label>
+                <input type="password" class="form-control" id="signup-password" required>
+              </div>
+              <button type="submit" class="btn btn-submit" id="signup-button">Sign Up</button>
+              <p class="error-message" id="signup-error"></p>
+              <p class="success-message" id="signup-success"></p>
+            </form>
+          </div>
+
+          <!-- Verify OTP Form -->
+          <div id="verify-form" class="auth-form">
+            <form id="verifyForm">
+              <div class="form-group">
+                <label for="verify-email">Email:</label>
+                <input type="email" class="form-control" id="verify-email" required readonly>
+              </div>
+              <div class="form-group">
+                <label for="verify-otp">OTP:</label>
+                <input type="text" class="form-control" id="verify-otp" required>
+              </div>
+              <button type="submit" class="btn btn-submit">Verify</button>
+              <p class="error-message" id="verify-error"></p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CSS for modal auth (unchanged, but included for completeness) -->
+<style>
+  .auth-container { padding: 20px; }
+  .auth-tabs { display: flex; justify-content: center; margin-bottom: 20px; }
+  .auth-tabs button { flex: 1; padding: 10px; border: none; background-color: #f1f1f1; cursor: pointer; font-weight: bold; transition: background-color 0.3s; }
+  .auth-tabs button.active { background-color: #c27b85; color: white; }
+  .auth-form { display: none; }
+  .auth-form.active { display: block; }
+  .btn-submit { background-color: #c27b85; color: white; width: 100%; }
+  .error-message { color: red; font-size: 14px; margin-top: 10px; display: none; }
+  .success-message { color: green; font-size: 14px; margin-top: 10px; display: none; }
+</style>
+
+<!-- jQuery for login/signup (updated with OTP verification) -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+  function showForm(formId) {
+    $('.auth-form').removeClass('active');
+    $('#' + formId + '-form').addClass('active');
+    $('.tab-button').removeClass('active');
+    $('button[onclick="showForm(\'' + formId + '\')"]').addClass('active');
+    $('.error-message').hide();
+    $('.success-message').hide();
+    if (formId === 'verify') {
+      $('#verify-tab').show(); // Show verify tab when active
+    }
+  }
+
+  $(document).ready(function () {
+    // Login form
+   $('#loginForm').on('submit', function (e) {
+  e.preventDefault();
+
+  // Instantly switch to OTP form
+  showForm('verify');
+  $('#verify-email').val($('#login-email').val());
+
+  // Still send AJAX in background
+  $.ajax({
+    url: 'login.php',
+    type: 'POST',
+    data: {
+      email: $('#login-email').val(),
+      password: $('#login-password').val()
+    },
+    dataType: 'json',
+    success: function (response) {
+      if (!response.success) {
+        // If login fails, go back to login form
+        showForm('login');
+        $('#login-error').text(response.message).show();
+      }
+    },
+    error: function () {
+      showForm('login');
+      $('#login-error').text('Server error.').show();
+    }
+  });
+});
+
+
+    // Signup form
+    $('#signupForm').on('submit', function (e) {
+  e.preventDefault();
+
+  // Instantly switch to OTP form
+  showForm('verify');
+  $('#verify-email').val($('#signup-email').val());
+
+  // Still send AJAX in background
+  $.ajax({
+    url: 'signup.php',
+    type: 'POST',
+    data: {
+      name: $('#signup-name').val(),
+      email: $('#signup-email').val(),
+      password: $('#signup-password').val()
+    },
+    dataType: 'json',
+    success: function (response) {
+      if (!response.success) {
+        // If signup fails, go back to signup form
+        showForm('signup');
+        $('#signup-error').text(response.message).show();
+      }
+    },
+    error: function () {
+      showForm('signup');
+      $('#signup-error').text('Server error.').show();
+    }
+  });
+});
+
+
+    // Verify form
+    $('#verifyForm').on('submit', function (e) {
+      e.preventDefault();
+      $.ajax({
+        url: 'verify.php',
+        type: 'POST',
+        data: {
+          email: $('#verify-email').val(),
+          otp: $('#verify-otp').val()
+        },
+        dataType: 'json',
+        success: function (response) {
+          if (response.success) {
+            $('#authModal').modal('hide');
+            window.location.href = 'new/index.php';
+          } else {
+            $('#verify-error').text(response.message).show();
+          }
+        },
+        error: function () {
+          $('#verify-error').text('Server error.').show();
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+
+  <div class="container-fluid">
+    <div class="row no-gutters">
+      <div class="col-md-8 p-0">
+        <div id="carouselExampleCaptions" class="carousel slide custom-carousel" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active"> <img src="images/r.png" alt="..."> </div>
+            <div class="carousel-item"> <img src="images/c.png" alt="..."> </div>
+            <div class="carousel-item"> <img src="images/we.png" alt="..."> </div>
+            <div class="carousel-item"> <img src="images/5.png" alt="..."> </div>
+            <div class="carousel-item"> <img src="images/2.png" alt="..."> </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 p-0">
+        <div class="message-container">
+          <div class="changes">
+            <h2>Planning a Dream Wedding ?</h2>
+            <img src="images/new.png" alt="Flower Icon" class="flower-img">
+            <p style="font-size: 18px;">At LP Petals & Promises, we don’t just plan weddings—we craft timeless love stories wrapped in elegance and sprinkled with magic. From the first bloom to the final vow, every moment is thoughtfully curated to reflect your unique journey. Whether it’s a royal celebration beneath starlit skies or an intimate ceremony bathed in golden hues, our team brings your vision to life with grace, precision, and a touch of enchantment. With exquisite decor, seamless coordination, and heartfelt details, we turn dreams into breathtaking realities. Trust LP Petals & Promises to create a wedding that’s not just beautiful—but truly unforgettable.</p>
+          </div>
+          <span class="heart" style="left:10%; animation-delay: 0s;">❤</span>
+          <span class="heart" style="left:30%; animation-delay: 1s;">❤</span>
+          <span class="heart" style="left:50%; animation-delay: 2s;">❤</span>
+          <span class="heart" style="left:70%; animation-delay: 2s;">❤</span>
+          <span class="heart" style="left:90%; animation-delay: 1.5s;">❤</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="event-heading">
+    <h2>A Fairytale Unfolds</h2>
+    <p>Each event, a memory woven with joy, love, and tradition</p>
+  </div>
+  <div class="event-carousel">
+    <div class="event-box"> <a href="haldi.html"> <img src="images/haldi.png" alt="Haldi"> </a>
+      <div class="event-content">
+        <h3>Haldi Ceremony</h3>
+        <p>A joyful pre-wedding event filled with turmeric, music, and love.</p>
+      </div>
+    </div>
+    <div class="event-box"> <img src="images/mehendi.png" alt="Mehendi">
+      <div class="event-content">
+        <h3>Mehendi</h3>
+        <p>Celebrate with intricate henna designs and vibrant traditions.</p>
+      </div>
+    </div>
+    <div class="event-box"> <img src="images/sangeet.png" alt="Sangeet">
+      <div class="event-content">
+        <h3>Sangeet</h3>
+        <p>A night of dance, fun, and music with family and friends.</p>
+      </div>
+    </div>
+    <div class="event-box"> <img src="images/wedding.png" alt="Wedding">
+      <div class="event-content">
+        <h3>Wedding Day</h3>
+        <p>The sacred vows of love and togetherness, beautifully celebrated.</p>
+      </div>
+    </div>
+    <div class="event-box"> <img src="images/reception.png" alt="Reception">
+      <div class="event-content">
+        <h3>Reception</h3>
+        <p>An elegant conclusion to your dream wedding celebration.</p>
+      </div>
+    </div>
+  </div>
+  <div class="video-section">
+    <video controls autoplay muted loop class="wedding-video">
+      <source src="images/abt.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+
+
+  <footer>
+    <div class="footer-content">
+      <img src="images/lai.png" alt="LP Logo" class="footer-logo">
+      <div class="footer-names"><i class="fas fa-heart"></i> A Touch of Timeless Charm by Laiba & Punita <i class="fas fa-heart"></i></div>
+      <div class="footer-locations">Pune | Mumbai | Nashik | Ahmednagar</div>
+      <div class="footer-copy">&copy; 2025 LP Petals & Promises. All rights reserved.</div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/service-worker.js");
+}
+</script>
+
+
+</body>
+</html>
